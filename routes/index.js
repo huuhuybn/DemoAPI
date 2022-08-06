@@ -90,11 +90,27 @@ router.post('/updateConfirm', async function (req, res) {
 
 
 router.get('/getUsers', function (req, res) {
+
     const sinhVienList = mongoose.model('students', SinhVien);
 
     sinhVienList.find({}, function (error, result) {
         res.send(result);
     })
+})
+
+router.post('createStudent', function (req, res) {
+    var name = req.body.name;
+    var age = req.body.age;
+    var address = req.body.address;
+
+    // truy van va them sinh vien
+
+    // thanh cong
+    res.send({
+        statusCode: 200,
+        message: 'Thanh Cong'
+    });
+
 })
 
 
