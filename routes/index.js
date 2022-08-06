@@ -92,12 +92,15 @@ router.post('/createUser', async function (req, res) {
     var name = req.body.name;
     var age = req.body.age;
     var address = req.body.address;
+
+    const SV = mongoose.model('students', SinhVien);
     const sinhVien = new SV({
         name: name,
         age: age,
         address: address
     })
     await sinhVien.save();
+
     res.send({
         statusCode : 200,
         message : 'Thang Cong!!!'
