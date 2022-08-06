@@ -88,7 +88,7 @@ router.post('/updateConfirm', async function (req, res) {
 
 })
 
-router.post('createUser', async function (req, res) {
+router.post('/createUser', async function (req, res) {
     var name = req.body.name;
     var age = req.body.age;
     var address = req.body.address;
